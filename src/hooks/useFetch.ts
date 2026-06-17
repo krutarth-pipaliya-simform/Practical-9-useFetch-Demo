@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 export const useFetch = (
     URL: string,
     method: "GET" | "POST" | "PUT" | "PATCH" | "DELETE",
-    payload?,
+    payload?: Record<string, unknown>,
     shouldSkip?: boolean,
 ) => {
     const [isLoading, setIsLoading] = useState(true);
@@ -14,9 +14,9 @@ export const useFetch = (
 
     useEffect(() => {
         const fetchData = () => {
-            setError(null)
+            setError(null);
             setIsLoading(true);
-            setData(null)
+            setData(null);
             fetch(URL, { method, body: stringifiedPayload })
                 .then((res) => {
                     if (!res.ok) throw new Error("Error fetching Data");
