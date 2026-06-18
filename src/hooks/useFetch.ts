@@ -16,7 +16,7 @@ export const useFetch = (
         const fetchData = () => {
             setError(null);
             setIsLoading(true);
-            setData(null);
+            
             fetch(URL, { method, body: stringifiedPayload })
                 .then((res) => {
                     if (!res.ok) throw new Error("Error fetching Data");
