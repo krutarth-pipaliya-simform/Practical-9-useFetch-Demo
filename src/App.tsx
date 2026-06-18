@@ -1,5 +1,7 @@
+import { DataContainer } from "./components/DataContainer";
+
 const App = () => {
-    return <div>App</div>;
+    return <DataContainer />;
 };
 
 export default App;
